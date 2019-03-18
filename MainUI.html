@@ -1,0 +1,98 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Database replication</title>
+	<style type="text/css">
+	body
+	{
+		background-color: orange;
+		color: black;
+		height: 500px;
+		width: 98%;
+		border: 5px solid green;
+	}
+		h2
+		{
+			
+			background-color: blue;
+			text-align: center;
+			color: orange;
+			font-size: 30px;
+		}
+		h3
+		{
+			position: absolute;
+			bottom: 20px;
+			right: 20px;
+			font-size: 20px;
+		}
+		form,table,tr,td,button
+		{
+			text-align: center;
+			font-size: 25px;
+		}
+		table
+		{position: absolute;
+			top: 100px;
+			margin-left: 450px;
+		}
+	</style>
+</head>
+<body>
+<h2>Welcome to database replication app</h2>
+<button onclick="showt()"> Show Tables</button>
+	<form action="/api/data" method="POST">
+		<table>
+			<tr><td>
+		Enter source username:</td><td>
+		<input type="text" name="srcun" ></td>
+	</tr><br>
+	<tr><td>
+		Enter source password:</td><td>
+		<input type="text" name="srcpass" ></td>
+	</tr><br>
+	<tr><td>
+		Enter source host:</td><td>
+		<input type="text" name="srchost"></td>
+	</tr>
+			<br><tr><td>
+		Enter source database:</td><td>
+		<input type="text" name="srcdb"></td>
+	</tr>
+	<br>
+	<tr><td>
+		Enter table to copy:</td><td>
+		<input type="text" name="srctb" value=""></td>
+	</tr>
+	<br>
+	<tr><td>
+		Enter destination username:</td><td>
+		<input type="text" name="destun"></td>
+	</tr><br>
+	<tr><td>
+		Enter destination password:</td><td>
+		<input type="text" name="destpass" ></td>
+	</tr><br>
+	<tr><td>
+		Enter destination host:</td><td>
+		<input type="text" name="desthost" ></td>
+	</tr>
+		<br><tr><td>
+		Enter destination database:</td><td>
+		<input type="text" name="destdb"></td>
+	</tr>
+		<br><tr><td>
+		<button type="submit">submit</button></td>
+	</tr>
+		</table>
+	</form>
+<h3>-developed by anmol purwar</h3>
+</body>
+<script type="text/javascript">
+	function showt(){
+
+      window.location.replace("http://localhost:4000");
+	}
+</script>
+</html>

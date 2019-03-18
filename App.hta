@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Database replication</title>
+	<style type="text/css">
+	body
+	{
+		background-color: black;
+		color: white;
+		height: 650px;
+		width: 1350px;
+		border: 5px solid red;
+		text-align: center;
+	}
+		h1
+		{
+			margin: 10px;
+			background-color: skyblue;
+			color: orange;
+			font-size: 70px;
+		}
+		button
+		{
+			margin-top: 100px;
+			height: 100px;
+			width: 200px;
+			font-size: 50px;
+		}
+		#two,#one{
+			width: 400px;
+		}
+	</style>
+</head>
+<body>
+<h1>--------Initiator window------</h1>
+<div>
+<button id="two" onclick="replicate()">Start server</button><button onclick="self.close()">Exit</button><button id="one" style="display: none;" onclick="pass()">Go to interface</button>
+</div>
+
+	<script type="text/javascript">
+		function replicate() {
+			var objShell = new ActiveXObject("Shell.Application");
+      objShell.ShellExecute("cmd.exe","/k cd C:\\Users\\Anmol\\Desktop\\database mirroring && node MainServer.js","C:\\Windows\\System32","open","2");
+
+      var objShell1 = new ActiveXObject("Shell.Application");
+      objShell1.ShellExecute("cmd.exe","/k cd C:\\Users\\Anmol\\Desktop\\database mirroring && node TableServer.js","C:\\Windows\\System32","open","2");
+
+      var x = document.getElementById('one');
+      x.style.display = 'block';
+}
+
+function pass(){
+	window.location.replace("http://localhost:3000");
+
+}
+
+	</script>
+</body>
+</html>
